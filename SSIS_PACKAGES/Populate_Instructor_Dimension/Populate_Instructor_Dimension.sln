@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Populate_Instructor_Dimension", "Populate_Instructor_Dimension\Populate_Instructor_Dimension.dtproj", "{962B424E-132F-40D8-9BA6-CC1136576BA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{962B424E-132F-40D8-9BA6-CC1136576BA3}.Development|Default.ActiveCfg = Development
+		{962B424E-132F-40D8-9BA6-CC1136576BA3}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FA787E5-8245-44C1-AD0D-991C6D7D5E74}
+	EndGlobalSection
+EndGlobal
