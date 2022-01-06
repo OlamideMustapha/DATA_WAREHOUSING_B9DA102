@@ -13,16 +13,6 @@ CREATE TABLE Student_Dim (
 
 GO
 
-CREATE TABLE Instructor_Dim (
-	instructor_key INT NOT NULL IDENTITY,
-	instructor_id VARCHAR (10),
-	first_name VARCHAR(50),
-	last_name VARCHAR(50),
-	PRIMARY KEY (instructor_key),
-);
-
-GO
-
 
 CREATE TABLE Course_Dim (
 	course_key INT NOT NULL IDENTITY,
@@ -90,19 +80,18 @@ CREATE TABLE Date_Dim (
 GO
 
 
+
 CREATE TABLE Grade_Fact (
-	date_key INT,
 	student_key INT,
 	module_key INT,
 	grade_key INT,
-	instructor_key INT,
+	course_key INT,
 	grade INT,
-	--PRIMARY KEY (grade_key),
-	FOREIGN KEY (date_key) REFERENCES Date_Dim (date_key),
+	PRIMARY KEY (grade_key),
 	FOREIGN KEY (student_key) REFERENCES Student_Dim (student_key),
 	FOREIGN KEY (module_key) REFERENCES Module_Dim (module_key),
 	FOREIGN KEY (grade_key) REFERENCES Grade_Dim (grade_key),
-	FOREIGN KEY (instructor_key) REFERENCES Instructor_Dim (instructor_key),
+	FOREIGN KEY (course_key) REFERENCES Course_Dim (course_key),
 );
 
 GO
@@ -115,7 +104,7 @@ CREATE TABLE Revenue_Fact (
 	department_key INT,
 	enrollment_key INT,
 	amount DECIMAL (6, 1),
-	PRIMARY KEY (course_key, student_key),
+	PRIMARY KEY (enrollment_key),
 	FOREIGN KEY (date_key) REFERENCES Date_Dim (date_key),
 	FOREIGN KEY (student_key) REFERENCES Student_Dim (student_key),
 	FOREIGN KEY (department_key) REFERENCES Department_Dim (department_key),

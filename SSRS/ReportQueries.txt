@@ -1,0 +1,35 @@
+################### QUERY FOR CREATING PARAMETIZED REPORT##########################
+
+USE [B9DA102_UNIVERSITY_DW]
+GO
+CREATE PROC QueryReport4
+@id char(3)
+AS
+SELECT Department_Dim.department_id, Department_Dim.department_name, Course_Dim.course_name, Revenue_Fact.amount, Date_Dim.Year_
+FROM Course_Dim 
+INNER JOIN Revenue_Fact 
+ON Course_Dim.course_key = Revenue_Fact.course_key 
+INNER JOIN Department_Dim 
+ON Revenue_Fact.department_key = Department_Dim.department_key 
+INNER JOIN Date_Dim 
+ON Revenue_Fact.date_key = Date_Dim.date_key
+WHERE department_id=@id
+GROUP BY Department_Dim.department_id, Department_Dim.department_name, Course_Dim.course_name, Revenue_Fact.amount, Date_Dim.Year_
+GO
+EXEC QueryReport4 '100'
+
+
+###############QUERY FOR CREATING OUTER REPORT######################################
+
+USE [B9DA102_UNIVERSITY_DW]
+GO
+CREATE PROC uspOuterQuery
+AS
+SELECT Student_Dim.student_id, AVG(Grade_Fact.grade) AS [Average Grade]
+FROM Grade_Fact 
+INNER JOIN Student_Dim 
+ON Grade_Fact.student_key = Student_Dim.student_key
+GROUP BY Student_Dim.student_id
+GO
+EXEC uspOuterQuery
+

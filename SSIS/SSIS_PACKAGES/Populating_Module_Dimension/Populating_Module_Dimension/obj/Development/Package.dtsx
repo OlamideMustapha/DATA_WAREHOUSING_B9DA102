@@ -1,0 +1,627 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/11/2021 12:39:08 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ED977RF"
+  DTS:CreatorName="DESKTOP-ED977RF\Toyosi6"
+  DTS:DTSID="{E648A562-9477-4C24-9E41-662AD5C4E87B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{E84CEC15-398B-4882-B5BA-474C30DE8F98}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ED977RF\SQLEXPRESS.B9DA102_DATA_SOURCE]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{CD75B5AB-A2B1-4A58-9BD1-444A6A98BDA6}"
+      DTS:ObjectName="DESKTOP-ED977RF\SQLEXPRESS.B9DA102_DATA_SOURCE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-ED977RF\SQLEXPRESS;Initial Catalog=B9DA102_DATA_SOURCE;Integrated Security=True;Application Name=SSIS-Package-{CD75B5AB-A2B1-4A58-9BD1-444A6A98BDA6}DESKTOP-ED977RF\SQLEXPRESS.B9DA102_DATA_SOURCE;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ED977RF\SQLEXPRESS.B9DA102_UNIVERSITY_DW]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{00CEF049-CB53-4B5B-A66E-65CCF7E9B7D0}"
+      DTS:ObjectName="DESKTOP-ED977RF\SQLEXPRESS.B9DA102_UNIVERSITY_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-ED977RF\SQLEXPRESS;Initial Catalog=B9DA102_UNIVERSITY_DW;Integrated Security=True;Application Name=SSIS-Package-{00CEF049-CB53-4B5B-A66E-65CCF7E9B7D0}DESKTOP-ED977RF\SQLEXPRESS.B9DA102_UNIVERSITY_DW;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ED977RF\SQLEXPRESS.B9DA102_UNIVERSITY_DW 1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{96D4331A-30D5-4648-8DFD-725EAB7C065D}"
+      DTS:ObjectName="DESKTOP-ED977RF\SQLEXPRESS.B9DA102_UNIVERSITY_DW 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-ED977RF\SQLEXPRESS;Initial Catalog=B9DA102_UNIVERSITY_DW;Integrated Security=True;Application Name=SSIS-Package-{96D4331A-30D5-4648-8DFD-725EAB7C065D}DESKTOP-ED977RF\SQLEXPRESS.B9DA102_UNIVERSITY_DW 1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{68C2B4DC-7A40-45C3-8CA5-69544E6BE032}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Module_Data_Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="Module_Data_Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Module_T"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Module_Data_Source.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED977RF\SQLEXPRESS.B9DA102_DATA_SOURCE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED977RF\SQLEXPRESS.B9DA102_DATA_SOURCE]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[module_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].ExternalColumns[module_name]"
+                      length="79"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[module_name]"
+                      name="module_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[module_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].ExternalColumns[module_id]"
+                      length="5"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[module_id]"
+                      name="module_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[course_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].ExternalColumns[course_id]"
+                      length="6"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[course_id]"
+                      name="course_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[duration]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].ExternalColumns[duration]"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[duration]"
+                      name="duration"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[semester]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].ExternalColumns[semester]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[semester]"
+                      name="semester"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].ExternalColumns[module_name]"
+                      dataType="wstr"
+                      length="79"
+                      name="module_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].ExternalColumns[module_id]"
+                      dataType="wstr"
+                      length="5"
+                      name="module_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].ExternalColumns[course_id]"
+                      dataType="wstr"
+                      length="6"
+                      name="course_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].ExternalColumns[duration]"
+                      dataType="i4"
+                      name="duration" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].ExternalColumns[semester]"
+                      dataType="wstr"
+                      length="15"
+                      name="semester" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[module_name]"
+                      dataType="wstr"
+                      length="79"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[module_name]"
+                      name="module_name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[module_id]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[module_id]"
+                      name="module_id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[course_id]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[course_id]"
+                      name="course_id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[duration]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[duration]"
+                      name="duration" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[semester]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[semester]"
+                      name="semester" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Module_Dimension_Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Module_Dimension_Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Module_Dim"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Module_Dimension_Destination.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED977RF\SQLEXPRESS.B9DA102_UNIVERSITY_DW 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED977RF\SQLEXPRESS.B9DA102_UNIVERSITY_DW 1]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Module_Dimension_Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Module_Dimension_Destination.Inputs[ADO NET Destination Input].Columns[module_name]"
+                      cachedDataType="wstr"
+                      cachedLength="79"
+                      cachedName="module_name"
+                      externalMetadataColumnId="Package\Data Flow Task\Module_Dimension_Destination.Inputs[ADO NET Destination Input].ExternalColumns[module_name]"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[module_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Module_Dimension_Destination.Inputs[ADO NET Destination Input].Columns[module_id]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="module_id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task\Module_Dimension_Destination.Inputs[ADO NET Destination Input].ExternalColumns[module_id]"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[module_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Module_Dimension_Destination.Inputs[ADO NET Destination Input].ExternalColumns[module_key]"
+                      dataType="i4"
+                      name="module_key" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Module_Dimension_Destination.Inputs[ADO NET Destination Input].ExternalColumns[module_id]"
+                      dataType="wstr"
+                      length="5"
+                      name="module_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Module_Dimension_Destination.Inputs[ADO NET Destination Input].ExternalColumns[module_name]"
+                      dataType="wstr"
+                      length="79"
+                      name="module_name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Module_Dimension_Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\Module_Dimension_Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Dimension_Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Module_Dimension_Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Module_Dimension_Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Module_Dimension_Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[module_name]"
+                      cachedDataType="wstr"
+                      cachedLength="79"
+                      cachedName="module_name"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[module_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[module_id]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="module_id"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[module_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[semester]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="semester"
+                      lineageId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[semester]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[module_name]"
+                      dataType="wstr"
+                      length="79"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[module_name]"
+                      name="module_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[module_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[module_id]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[module_id]"
+                      name="module_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[module_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[semester]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[semester]"
+                      name="semester">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output].Columns[semester]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output]"
+              endId="Package\Data Flow Task\Sort.Inputs[Sort Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\Module_Data_Source.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output]"
+              endId="Package\Data Flow Task\Module_Dimension_Destination.Inputs[ADO NET Destination Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Data Flow Task\Module_Data_Source"
+          TopLeft="326,55" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Data Flow Task\Sort"
+          TopLeft="412,155" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
+          TopLeft="418.5,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="43,58"
+              Start="0,0"
+              End="43,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="39,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39,29"
+                    Point2="43,29"
+                    Point3="43,33" />
+                  <mssgle:LineSegment
+                    End="43,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="235,42"
+          Id="Package\Data Flow Task\Module_Dimension_Destination"
+          TopLeft="353,245" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="461.5,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9,48"
+              Start="0,0"
+              End="9,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="4,24" />
+                  <mssgle:LineSegment
+                    End="5,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5,24"
+                    Point2="9,24"
+                    Point3="9,28" />
+                  <mssgle:LineSegment
+                    End="9,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Module_Data_Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Module_Dimension_Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

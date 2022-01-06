@@ -1,0 +1,32 @@
+course_name,department_id,course_id,cost
+Doctor of Philosophy Administration in Accounting and Finance,105,AF105,25958.5
+Bachelor of Business Administration in Accounting and Finance,105,AF6105,23169.0
+Master of Business Administration in Accounting and Finance,105,AF9105,21239.3
+Doctor of Philosophy in Agriculture and Animal Science,101,AS101,5789.1
+Bachelor of Science in Agriculture and Animal Science,101,AS6101,6372.0
+Master of science in Agriculture and Animal Science,101,AS9101,21141.0
+Doctor of Philosophy Administration in Business Analytics,105,BA105,26287.5
+Bachelor of Business Administration in Business Analytics,105,BA6105,24995.4
+Master of Business Administration in Business Analytics,105,BA9105,14997.9
+Doctor of Philosophy in Civil Engineering,100,CE100,21380.2
+Bachelor of Engineering in Civil Engineering,100,CE6100,13777.7
+Master of Engineering in Civil Engineering,100,CE9100,10007.3
+Doctor of Philosophy in Counselling and Psychotherapy,103,CP103,16670.4
+Bachelor of Art in Counselling and Psychotherapy,103,CP6103,14190.9
+Master of Art in Counselling and Psychotherapy,103,CP9103,13173.8
+Doctor of Philosophy in Data Analytics,102,DA102,8114.4
+Bachelor of Science in Data Analytics,102,DA6102,12418.9
+Master of science in Data Analytics,102,DA9102,16050.2
+Doctor of Philosophy in Electrical Engineering,100,EE100,28671.2
+Bachelor of Engineering in Electrical Engineering,100,EE6100,22860.0
+Master of Engineering in Electrical Engineering,100,EE9100,19395.7
+Doctor of Philosophy in Health Science,101,HS101,20411.9
+Bachelor of Science in Health Science,101,HS6101,22286.0
+Master of science in Health Science,101,HS9101,27175.0
+Doctor of Philosophy in Information Systems with Computing,102,IS102,5637.6
+Bachelor of Science in Information Systems with Computing,102,IS6102,22399.0
+Master of science in Information Systems with Computing,102,IS9102,24962.0
+Bachelor of Law in Law,104,LA6104,25679.6
+Doctor of Philosophy in Psychology and Social Science,103,PS103,26048.7
+Bachelor of Art in Psychology and Social Science,103,PS6103,13402.4
+Master of Art in Psychology and Social Science,103,PS9103,26568.1
